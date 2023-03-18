@@ -1,4 +1,4 @@
-<h2>HIỂN THỊ THÔNG TIN NÀY TỪ HOME</h2>
+<!-- <h2>HIỂN THỊ THÔNG TIN NÀY TỪ HOME</h2>
 <h1>Xin chào {{ name }}</h1>
 <input type="text" name="" id="" title="Đây là {{ name }}" [value]="name" />
 <input
@@ -10,4 +10,17 @@
   [title]="'Đây là ' + name"
 />
 <h2 *ngIf="age >= 18">Bạn đã trưởng thành</h2>
-<h2 *ngIf="age < 18">Bạn là trẻ con</h2>
+<h2 *ngIf="age < 18">Bạn là trẻ con</h2> -->
+<input type="text " [(ngModel)]="name" />
+<h2>Chào {{ name }}</h2>
+<button (click)="resetName()">ResetName</button>
+<br />
+<input type="text" [(ngModel)]="age" />
+<div *ngIf="age <= 18; then tre; else gia"></div>
+<ng-template #gia><h2>Bạn đã trưởng thành</h2> </ng-template>
+<ng-template #tre><h2>Bạn là trẻ con</h2></ng-template>
+
+<br />
+<div *ngFor="let c of traiCays; let i = index">
+  <li>{{ i + 1 }}.{{ c }}</li>
+</div>

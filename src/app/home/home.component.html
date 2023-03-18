@@ -1,0 +1,13 @@
+<h2>HIỂN THỊ THÔNG TIN NÀY TỪ HOME</h2>
+<h1>Xin chào {{ name }}</h1>
+<input type="text" name="" id="" title="Đây là {{ name }}" [value]="name" />
+<input
+  type="text"
+  name=""
+  id=""
+  title="Đây là name"
+  [value]="name"
+  [title]="'Đây là ' + name"
+/>
+<h2 *ngIf="age >= 18">Bạn đã trưởng thành</h2>
+<h2 *ngIf="age < 18">Bạn là trẻ con</h2>

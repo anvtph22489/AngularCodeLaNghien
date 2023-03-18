@@ -34,9 +34,14 @@
   </tr>
   <tr *ngFor="let st of students; let i = index">
     <td>{{ i + 1 }}</td>
-    <td>{{ st.name }}</td>
-    <td [ngClass]="{ age: st.age < 18 }">{{ st.age }}</td>
+    <td>{{ st.name | uppercase }}</td>
+    <td [ngClass]="{ age: st.age < 18 }">
+      {{ st.age | currency : "VND" : "symbol" : "1.2" }}
+    </td>
     <!-- Mặc định ngIf bằng true -->
-    <td *ngIf="st.status">Đã đủ tuổi</td>
+    <!-- <td *ngIf="st.status">Đã đủ tuổi {{ st.age | onsale }}</td> -->
+    <td>
+      <span>{{ st.status | onsale }}</span>
+    </td>
   </tr>
 </table>

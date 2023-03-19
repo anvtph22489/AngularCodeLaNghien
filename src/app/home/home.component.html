@@ -1,0 +1,59 @@
+<p>home works!</p>
+<h2>HIỂN THỊ THÔNG TIN NÀY TỪ HOME</h2>
+<h1>Xin chào {{ name }}</h1>
+<input type="text" name="" id="" title="Đây là {{ name }}" [value]="name" />
+<input
+  type="text"
+  name=""
+  id=""
+  title="Đây là name"
+  [value]="name"
+  [title]="'Đây là ' + name"
+/>
+<h2 *ngIf="age >= 18">Bạn đã trưởng thành</h2>
+<h2 *ngIf="age < 18">Bạn là trẻ con</h2>
+<input type="text " [(ngModel)]="name" />
+<h2>Chào {{ name }}</h2>
+<button (click)="resetName()">ResetName</button>
+<br />
+<input type="text" [(ngModel)]="age" />
+<div *ngIf="age <= 18; then tre; else gia"></div>
+<ng-template #gia><h2>Bạn đã trưởng thành</h2> </ng-template>
+<ng-template #tre><h2>Bạn là trẻ con</h2></ng-template>
+
+<br />
+<div *ngFor="let c of traiCays; let i = index">
+  <li>{{ i + 1 }}.{{ c }}</li>
+</div>
+<br />
+<table style="width: 100%">
+  <tr>
+    <th>STT</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Status</th>
+  </tr>
+  <tr *ngFor="let st of students; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>{{ st.name | uppercase }}</td>
+    <td [ngClass]="{ age: st.age < 18 }">
+      {{ st.age | currency : "VND" : "symbol" : "1.2" }}
+    </td>
+    <!-- 2 dòng dưới là ví dụ cũ -->
+    <!-- Mặc định ngIf bằng true -->
+    <!-- <td *ngIf="st.status">Đã đủ tuổi {{ st.age | onsale }}</td> -->
+    <td>
+      <span>{{ st.status | onsale }}</span>
+    </td>
+  </tr>
+</table>
+<br />
+<span>Tỉnh</span>
+<select id="tinh" (change)="changeTinh($event)">
+  <option *ngFor="let t of vietNam" [value]="t.tinh">{{ t.tinh }}</option>
+</select>
+<span>Quận huyện</span>
+<select name="cars" id="cars">
+  <option *ngFor="let qh of quanHuyens" [value]="qh">{{ qh }}</option>
+</select>
+<br />

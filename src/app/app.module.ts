@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { OnsalePipe } from './onsale.pipe';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { OnsalePipe } from './onsale.pipe';
     AboutComponent,
     PageNotFoundComponent,
     OnsalePipe,
+    TemplateDrivenFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

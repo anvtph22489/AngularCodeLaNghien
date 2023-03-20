@@ -8,6 +8,7 @@ export class CommonService {
   public binhPhuong(n: number): number {
     return n * n;
   }
+  public data = '';
   constructor() {}
   // public setCount(v: number): void {
   //   this.count = v;
@@ -16,4 +17,8 @@ export class CommonService {
   // public getCount(): number {
   //   return this.count;
   // }
+  public submitForm(data: any): void {
+    // console.log('Submit form is: ' + data);
+    console.log({ data, age: 2 });
+  }
 }
